@@ -9,21 +9,229 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero_slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_02": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-homepage-hero-4x1.png",
+            "image_mobile": "shopify://shop_images/solarmeister-homepage-hero-16x9.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_03": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-03.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-03.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_04": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-04.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-04.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_05": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-05.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-05.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_06": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-06.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-06.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_07": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-07.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-07.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_08": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-08.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-08.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_09": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-09.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-09.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_10": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-10.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-10.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_11": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-11.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_01": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/solarmeister-hero-4x1-01.png",
+            "image_mobile": "shopify://shop_images/solarmeister-hero-16x9-01.png",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "subheading": "",
+            "button_label": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "heading_size": "h1",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "slide_02",
+        "slide_03",
+        "slide_04",
+        "slide_05",
+        "slide_06",
+        "slide_07",
+        "slide_08",
+        "slide_09",
+        "slide_10",
+        "slide_11",
+        "slide_01"
+      ],
       "settings": {
-        "image": "shopify://shop_images/solarmeister-homepage-hero-4x1.png",
-        "image_mobile": "shopify://shop_images/solarmeister-homepage-hero-16x9.png",
-        "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
         "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "show_text_below": false,
+        "accessibility_info": "SolarMeister Highlights"
       }
     },
     "featured_collection": {
@@ -166,7 +374,7 @@
     }
   },
   "order": [
-    "image_banner",
+    "hero_slideshow",
     "featured_collection",
     "collection_gallery",
     "featured_collection_marken"

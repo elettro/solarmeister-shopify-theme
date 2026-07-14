@@ -333,6 +333,10 @@
 
     {% sections 'header-group' %}
 
+    {%- if template.name == 'collection' or template.name == 'product' -%}
+      {%- render 'breadcrumbs' -%}
+    {%- endif -%}
+
     <main
       id="MainContent"
       class="content-for-layout focus-none"

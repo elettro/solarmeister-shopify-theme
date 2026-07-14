@@ -490,3 +490,16 @@
     color: currentColor;
   }
 }
+
+/* SolarMeister custom: taller hero banner on phones.
+   The 4:1 hero with "adapt" height renders only ~25vw tall on mobile;
+   this overrides the aspect placeholder to a ~1.8:1 window so the image
+   center-crops larger (object-fit: cover handles the crop).
+   Tune the 55% value: higher = taller banner = tighter crop. */
+@media screen and (max-width: 749px) {
+  #Banner-image_banner::before,
+  #Banner-image_banner .banner__media::before,
+  #Banner-image_banner:not(.banner--mobile-bottom) .banner__content::before {
+    padding-bottom: 55% !important;
+  }
+}

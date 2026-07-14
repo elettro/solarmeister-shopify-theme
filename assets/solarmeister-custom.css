@@ -1,0 +1,13 @@
+/* SolarMeister custom styles */
+
+/* Uppercase top-level navigation: desktop inline menu */
+.header__inline-menu .list-menu--inline > li > a.header__menu-item,
+.header__inline-menu .list-menu--inline > li > header-menu > details > summary.header__menu-item {
+  text-transform: uppercase;
+}
+
+/* Uppercase top-level navigation: mobile drawer (submenus stay unchanged) */
+.menu-drawer__menu.list-menu > li > a.menu-drawer__menu-item,
+.menu-drawer__menu.list-menu > li > details > summary.menu-drawer__menu-item {
+  text-transform: uppercase;
+}

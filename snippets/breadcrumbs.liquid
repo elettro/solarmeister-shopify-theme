@@ -1,0 +1,48 @@
+{% comment %}
+  Renders breadcrumbs on collection and product pages.
+  Startseite › Kollektion (› Produkt)
+  On product pages the collection comes from the URL context (/collections/x/products/y)
+  or falls back to the product's first collection, skipping the unpublished
+  MwSt helper collections.
+{% endcomment %}
+
+{%- liquid
+  assign crumb_collection = blank
+  if template.name == 'collection'
+    assign crumb_collection = collection
+  elsif template.name == 'product'
+    if collection
+      assign crumb_collection = collection
+    else
+      for c in product.collections
+        if c.handle == '0-mwst-steuerhilfe-nicht-veroffentlichen' or c.handle == '19-mwst-steuerhilfe-nicht-veroffentlichen'
+          continue
+        endif
+        assign crumb_collection = c
+        break
+      endfor
+    endif
+  endif
+-%}
+
+<nav class="breadcrumbs page-width" role="navigation" aria-label="Breadcrumbs">
+  <ol class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="{{ routes.root_url }}">Startseite</a>
+    </li>
+    {%- if template.name == 'collection' and crumb_collection != blank -%}
+      <li class="breadcrumbs__item">
+        <span class="breadcrumbs__current" aria-current="page">{{ crumb_collection.title | escape }}</span>
+      </li>
+    {%- elsif template.name == 'product' -%}
+      {%- if crumb_collection != blank -%}
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ crumb_collection.url }}">{{ crumb_collection.title | escape }}</a>
+        </li>
+      {%- endif -%}
+      <li class="breadcrumbs__item">
+        <span class="breadcrumbs__current" aria-current="page">{{ product.title | escape }}</span>
+      </li>
+    {%- endif -%}
+  </ol>
+</nav>

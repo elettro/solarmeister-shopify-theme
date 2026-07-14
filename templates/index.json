@@ -12,7 +12,8 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify://shop_images/solarmeister-homepage-hero-16x9.png",
+        "image": "shopify://shop_images/solarmeister-homepage-hero-4x1.png",
+        "image_mobile": "shopify://shop_images/solarmeister-homepage-hero-16x9.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "bottom-center",

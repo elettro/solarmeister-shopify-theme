@@ -1,0 +1,136 @@
+/* Solar Meister global footer — "Option 2: Dark Premium Card Footer" with brand bar.
+   Source design: https://elettro.github.io/solarmeister/legal-footer/ (Option 2). */
+
+.sm-footer {
+  --sm-green-dark: #123d26;
+  --sm-lime: #dff4c8;
+  --sm-title-green: #c8f3d2;
+  --sm-soft-green: #cfe3d4;
+  --sm-card-border: rgba(255, 255, 255, 0.18);
+  --sm-card-bg: rgba(255, 255, 255, 0.04);
+  --sm-rule: rgba(255, 255, 255, 0.2);
+
+  background: var(--sm-green-dark);
+  color: #fff;
+  padding: 3rem 3rem 2.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sm-footer__inner {
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+.sm-footer__brandbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  padding-bottom: 2.2rem;
+  margin-bottom: 2.2rem;
+  border-bottom: 1px solid var(--sm-rule);
+}
+
+.sm-footer__sunmark {
+  flex: 0 0 auto;
+  display: block;
+}
+
+.sm-footer__brand {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.sm-footer__tagline {
+  margin-top: 0.5rem;
+  color: var(--sm-soft-green);
+  font-size: 1.4rem;
+}
+
+.sm-footer__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.sm-footer__card {
+  border: 1px solid var(--sm-card-border);
+  padding: 1.8rem;
+  border-radius: 10px;
+  background: var(--sm-card-bg);
+}
+
+.sm-footer__group-title {
+  font-size: 1.3rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 800;
+  margin: 0 0 1rem;
+  color: var(--sm-title-green);
+}
+
+.sm-footer__item {
+  display: block;
+  font-size: 1.4rem;
+  line-height: 1.45;
+  margin: 0 0 0.7rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sm-footer__item:hover {
+  text-decoration: underline;
+}
+
+.sm-footer__item:focus-visible {
+  outline: 2px solid var(--sm-lime);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.sm-footer__contact {
+  margin-top: 2.4rem;
+  font-size: 1.4rem;
+  line-height: 1.65;
+}
+
+.sm-footer__contact strong {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.sm-footer__contact a {
+  color: #fff;
+}
+
+.sm-footer__contact a:focus-visible {
+  outline: 2px solid var(--sm-lime);
+  outline-offset: 2px;
+}
+
+.sm-footer__bottom {
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--sm-rule);
+  font-size: 1.2rem;
+  color: var(--sm-soft-green);
+}
+
+@media screen and (max-width: 989px) {
+  .sm-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .sm-footer {
+    padding: 2.2rem 1.6rem 2rem;
+  }
+
+  .sm-footer__grid {
+    grid-template-columns: 1fr;
+  }
+}

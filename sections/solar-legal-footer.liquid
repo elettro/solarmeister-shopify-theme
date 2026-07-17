@@ -10,25 +10,38 @@
 <footer class="sm-footer">
   <div class="sm-footer__inner">
     <div class="sm-footer__brandbar">
-      <svg class="sm-footer__sunmark" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true" focusable="false">
-        <circle cx="23" cy="23" r="10" fill="#dff4c8"/>
-        <g stroke="#dff4c8" stroke-width="2.6" stroke-linecap="round">
-          <line x1="23" y1="2" x2="23" y2="8"/>
-          <line x1="23" y1="38" x2="23" y2="44"/>
-          <line x1="2" y1="23" x2="8" y2="23"/>
-          <line x1="38" y1="23" x2="44" y2="23"/>
-          <line x1="8.2" y1="8.2" x2="12.4" y2="12.4"/>
-          <line x1="33.6" y1="33.6" x2="37.8" y2="37.8"/>
-          <line x1="8.2" y1="37.8" x2="12.4" y2="33.6"/>
-          <line x1="33.6" y1="12.4" x2="37.8" y2="8.2"/>
-        </g>
-      </svg>
-      <div>
-        <div class="sm-footer__brand">{{ section.settings.brand_text | escape }}</div>
+      {%- if settings.logo != blank -%}
+        <a href="{{ routes.root_url }}" class="sm-footer__logo-chip" translate="no">
+          {{
+            settings.logo
+            | image_url: width: 360
+            | image_tag: widths: '180, 360', width: 180, alt: settings.logo.alt, loading: 'lazy'
+          }}
+        </a>
         {%- if section.settings.tagline != blank -%}
           <div class="sm-footer__tagline">{{ section.settings.tagline | escape }}</div>
         {%- endif -%}
-      </div>
+      {%- else -%}
+        <svg class="sm-footer__sunmark" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true" focusable="false">
+          <circle cx="23" cy="23" r="10" fill="#dff4c8"/>
+          <g stroke="#dff4c8" stroke-width="2.6" stroke-linecap="round">
+            <line x1="23" y1="2" x2="23" y2="8"/>
+            <line x1="23" y1="38" x2="23" y2="44"/>
+            <line x1="2" y1="23" x2="8" y2="23"/>
+            <line x1="38" y1="23" x2="44" y2="23"/>
+            <line x1="8.2" y1="8.2" x2="12.4" y2="12.4"/>
+            <line x1="33.6" y1="33.6" x2="37.8" y2="37.8"/>
+            <line x1="8.2" y1="37.8" x2="12.4" y2="33.6"/>
+            <line x1="33.6" y1="12.4" x2="37.8" y2="8.2"/>
+          </g>
+        </svg>
+        <div>
+          <div class="sm-footer__brand" translate="no">{{ section.settings.brand_text | escape }}</div>
+          {%- if section.settings.tagline != blank -%}
+            <div class="sm-footer__tagline">{{ section.settings.tagline | escape }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
     </div>
 
     <div class="sm-footer__grid">

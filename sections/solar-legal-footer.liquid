@@ -1,0 +1,135 @@
+{% comment %}
+  Solar Meister legal footer — "Option 2: Dark Premium Card Footer" with brand bar.
+  Rendered as an additional section above the standard Dawn footer.
+  The six legal link groups mirror the Legal Page Checklist; policy links
+  use Shopify's canonical /policies/ URLs.
+{% endcomment %}
+
+{{ 'solar-footer-option2.css' | asset_url | stylesheet_tag }}
+
+<footer class="sm-footer">
+  <div class="sm-footer__inner">
+    <div class="sm-footer__brandbar">
+      <svg class="sm-footer__sunmark" width="46" height="46" viewBox="0 0 46 46" aria-hidden="true" focusable="false">
+        <circle cx="23" cy="23" r="10" fill="#dff4c8"/>
+        <g stroke="#dff4c8" stroke-width="2.6" stroke-linecap="round">
+          <line x1="23" y1="2" x2="23" y2="8"/>
+          <line x1="23" y1="38" x2="23" y2="44"/>
+          <line x1="2" y1="23" x2="8" y2="23"/>
+          <line x1="38" y1="23" x2="44" y2="23"/>
+          <line x1="8.2" y1="8.2" x2="12.4" y2="12.4"/>
+          <line x1="33.6" y1="33.6" x2="37.8" y2="37.8"/>
+          <line x1="8.2" y1="37.8" x2="12.4" y2="33.6"/>
+          <line x1="33.6" y1="12.4" x2="37.8" y2="8.2"/>
+        </g>
+      </svg>
+      <div>
+        <div class="sm-footer__brand">{{ section.settings.brand_text | escape }}</div>
+        {%- if section.settings.tagline != blank -%}
+          <div class="sm-footer__tagline">{{ section.settings.tagline | escape }}</div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="sm-footer__grid">
+      <div class="sm-footer__card">
+        <h2 class="sm-footer__group-title">Core German Legal Pages</h2>
+        <a class="sm-footer__item" href="/policies/legal-notice">Impressum</a>
+        <a class="sm-footer__item" href="/policies/privacy-policy">Datenschutzerkl&auml;rung</a>
+        <a class="sm-footer__item" href="/pages/cookie-richtlinie">Cookie-Richtlinie / Cookie-Einstellungen</a>
+        <a class="sm-footer__item" href="/policies/terms-of-service">Allgemeine Gesch&auml;ftsbedingungen</a>
+      </div>
+      <div class="sm-footer__card">
+        <h2 class="sm-footer__group-title">Consumer Rights and Returns</h2>
+        <a class="sm-footer__item" href="/pages/widerrufsbelehrung">Widerrufsbelehrung</a>
+        <a class="sm-footer__item" href="/pages/muster-widerrufsformular">Muster-Widerrufsformular</a>
+        <a class="sm-footer__item" href="/pages/vertrag-widerrufen">Vertrag widerrufen online</a>
+        <a class="sm-footer__item" href="/policies/refund-policy">R&uuml;ckgabe &amp; Reklamation</a>
+      </div>
+      <div class="sm-footer__card">
+        <h2 class="sm-footer__group-title">Shop Operations</h2>
+        <a class="sm-footer__item" href="/policies/shipping-policy">Versand &amp; Lieferung</a>
+        <a class="sm-footer__item" href="/pages/zahlungsarten">Zahlungsarten</a>
+        <a class="sm-footer__item" href="/policies/contact-information">Kontakt</a>
+        <a class="sm-footer__item" href="/pages/verbraucherstreitbeilegung">Streitbeilegung / Verbraucherstreitbeilegung</a>
+      </div>
+      <div class="sm-footer__card">
+        <h2 class="sm-footer__group-title">Solar-Specific Compliance</h2>
+        <a class="sm-footer__item" href="/pages/0-prozent-mehrwertsteuer-photovoltaik">0% MwSt. Photovoltaik</a>
+        <a class="sm-footer__item" href="/pages/elektrogeraete-ruecknahme-weee">Elektroger&auml;te-R&uuml;cknahme / WEEE</a>
+        <a class="sm-footer__item" href="/pages/batterie-ruecknahme-batterieentsorgung">Batterie-R&uuml;cknahme &amp; Batterieentsorgung</a>
+        <a class="sm-footer__item" href="/pages/verpackungsgesetz-lucid">Verpackungsgesetz / LUCID</a>
+      </div>
+      <div class="sm-footer__card">
+        <h2 class="sm-footer__group-title">Product Safety and Liability Control</h2>
+        <a class="sm-footer__item" href="/pages/produktsicherheit-gpsr">Produktsicherheit / GPSR</a>
+        <a class="sm-footer__item" href="/pages/montage-installationshinweise">Montage- und Installationshinweise</a>
+        <a class="sm-footer__item" href="/pages/gewaehrleistung-garantie">Gew&auml;hrleistung &amp; Garantie</a>
+      </div>
+      <div class="sm-footer__card">
+        <h2 class="sm-footer__group-title">Trust and Future Compliance</h2>
+        <a class="sm-footer__item" href="/pages/barrierefreiheit">Barrierefreiheit</a>
+        <a class="sm-footer__item" href="/pages/ueber-uns">&Uuml;ber uns</a>
+      </div>
+    </div>
+
+    <div class="sm-footer__contact">
+      <strong>Kontakt</strong>
+      {%- if section.settings.contact_email != blank -%}
+        <a href="mailto:{{ section.settings.contact_email | escape }}">{{ section.settings.contact_email | escape }}</a>
+      {%- endif -%}
+      {%- if section.settings.contact_phone != blank %} &middot; {{ section.settings.contact_phone | escape }}{%- endif -%}
+      {%- if section.settings.contact_address != blank %} &middot; {{ section.settings.contact_address | escape }}{%- endif -%}
+    </div>
+
+    <div class="sm-footer__bottom">{{ section.settings.copyright_text | escape }}</div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Legal Footer (Option 2)",
+  "class": "section-solar-legal-footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_text",
+      "label": "Brand",
+      "default": "Solar Meister"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Die Zukunft deiner Energie beginnt hier."
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "E-Mail",
+      "default": "contact@solarmeister-shop.de"
+    },
+    {
+      "type": "text",
+      "id": "contact_phone",
+      "label": "Telefon",
+      "default": "+49 1525 9725120"
+    },
+    {
+      "type": "text",
+      "id": "contact_address",
+      "label": "Adresse",
+      "default": "Gutenbergring 63, 22848 Norderstedt, Deutschland"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright",
+      "default": "© Solar Meister. Alle Rechte vorbehalten."
+    }
+  ],
+  "enabled_on": {
+    "groups": ["footer"]
+  }
+}
+{% endschema %}

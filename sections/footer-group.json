@@ -2,6 +2,17 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "solar_legal_footer": {
+      "type": "solar-legal-footer",
+      "settings": {
+        "brand_text": "Solar Meister",
+        "tagline": "Die Zukunft deiner Energie beginnt hier.",
+        "contact_email": "contact@solarmeister-shop.de",
+        "contact_phone": "+49 1525 9725120",
+        "contact_address": "Gutenbergring 63, 22848 Norderstedt, Deutschland",
+        "copyright_text": "© Solar Meister. Alle Rechte vorbehalten."
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {},
@@ -23,6 +34,7 @@
     }
   },
   "order": [
+    "solar_legal_footer",
     "footer"
   ]
 }

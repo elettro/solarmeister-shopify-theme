@@ -1,6 +1,5 @@
 class PriceRangeSlider extends HTMLElement {
   connectedCallback() {
-    this.max = Number(this.dataset.max || 0);
     this.fromInput = document.getElementById(this.dataset.fromId);
     this.toInput = document.getElementById(this.dataset.toId);
     this.rangeMin = this.querySelector('[data-range-min]');
@@ -8,6 +7,7 @@ class PriceRangeSlider extends HTMLElement {
     this.trackRange = this.querySelector('[data-track-range]');
     this.valueMin = this.querySelector('[data-value-min]');
     this.valueMax = this.querySelector('[data-value-max]');
+    this.max = this.parseValue(this.dataset.max) || 0;
 
     if (!this.fromInput || !this.toInput || !this.max || !this.rangeMin || !this.rangeMax) return;
 
@@ -24,7 +24,11 @@ class PriceRangeSlider extends HTMLElement {
 
   parseValue(value) {
     if (value === '' || value === null || typeof value === 'undefined') return null;
-    const parsed = parseFloat(String(value).replace(',', '.'));
+    let str = String(value).trim();
+    // German-formatted input (e.g. "1.969,00") uses '.' as thousands separator
+    // and ',' as the decimal mark; strip the former before parsing the latter.
+    str = str.includes(',') ? str.replace(/\./g, '').replace(',', '.') : str;
+    const parsed = parseFloat(str);
     return Number.isNaN(parsed) ? null : Math.round(parsed);
   }
 

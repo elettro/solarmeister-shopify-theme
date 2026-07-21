@@ -1,3 +1,26 @@
+{%- if filter_type == 'vertical' -%}
+  {{ 'solar-price-slider.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'solar-price-slider.js' | asset_url }}" defer="defer"></script>
+  <price-range-slider
+    class="solar-price-slider"
+    data-max="{{ filter.range_max | money_without_currency }}"
+    data-from-id="{{ id_prefix }}{{ filter.label | escape }}-GTE"
+    data-to-id="{{ id_prefix }}{{ filter.label | escape }}-LTE"
+    data-currency="{{ cart.currency.iso_code }}"
+  >
+    <div class="solar-price-slider__track-wrap">
+      <div class="solar-price-slider__track"></div>
+      <div class="solar-price-slider__range" data-track-range></div>
+      <input type="range" min="0" step="1" data-range-min aria-label="{{ 'products.facets.from' | t }}">
+      <input type="range" min="0" step="1" data-range-max aria-label="{{ 'products.facets.to' | t }}">
+    </div>
+    <div class="solar-price-slider__values">
+      <span data-value-min></span>
+      <span data-value-max></span>
+    </div>
+  </price-range-slider>
+{%- endif -%}
+
 <span class="field-currency">{{ cart.currency.symbol }}</span>
 
 <div class="field">

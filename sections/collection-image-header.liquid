@@ -1,0 +1,88 @@
+{{ 'section-collection-image-header.css' | asset_url | stylesheet_tag }}
+
+<div class="collection-image-header collection-image-header--{{ section.settings.height }} color-{{ section.settings.color_scheme }}">
+  <div class="collection-image-header__media">
+    {%- if section.settings.image -%}
+      <img
+        srcset="
+          {{ section.settings.image | image_url: width: 750 }} 750w,
+          {{ section.settings.image | image_url: width: 1100 }} 1100w,
+          {{ section.settings.image | image_url: width: 1500 }} 1500w,
+          {{ section.settings.image | image_url: width: 2000 }} 2000w,
+          {{ section.settings.image | image_url: width: 2508 }} 2508w
+        "
+        src="{{ section.settings.image | image_url: width: 1500 }}"
+        sizes="100vw"
+        alt="{{ section.settings.image.alt | escape }}"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        loading="eager"
+        fetchpriority="high"
+      >
+    {%- elsif section.settings.fallback_image_url != blank -%}
+      <img
+        src="{{ section.settings.fallback_image_url }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="eager"
+        fetchpriority="high"
+      >
+    {%- endif -%}
+    <div class="collection-image-header__overlay"></div>
+  </div>
+
+  <div class="collection-image-header__content page-width">
+    {%- if section.settings.heading != blank -%}
+      <h1 class="collection-image-header__heading">{{ section.settings.heading | escape }}</h1>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="collection-image-header__subheading">{{ section.settings.subheading | escape }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bild-Header Kollektion",
+  "class": "section section-collection-image-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hintergrundbild"
+    },
+    {
+      "type": "text",
+      "id": "fallback_image_url",
+      "label": "Bild-URL (falls kein Bild ausgewählt)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Überschrift",
+      "default": "Balkonkraftwerke"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Unterüberschrift"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Höhe",
+      "options": [
+        { "value": "small", "label": "Klein" },
+        { "value": "medium", "label": "Mittel" },
+        { "value": "large", "label": "Groß" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}

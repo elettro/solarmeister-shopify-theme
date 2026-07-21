@@ -4,11 +4,14 @@
 
 .solar-price-slider {
   display: block;
+  flex: 1 1 100%;
+  width: 100%;
   margin: 0.2rem 0 1.8rem;
 }
 
 .solar-price-slider__track-wrap {
   position: relative;
+  width: 100%;
   height: 3.2rem;
 }
 

@@ -88,11 +88,34 @@
 
     <div class="sm-footer__contact">
       <strong>Kontakt</strong>
-      {%- if section.settings.contact_email != blank -%}
-        <a href="mailto:{{ section.settings.contact_email | escape }}">{{ section.settings.contact_email | escape }}</a>
-      {%- endif -%}
-      {%- if section.settings.contact_phone != blank %} &middot; {{ section.settings.contact_phone | escape }}{%- endif -%}
-      {%- if section.settings.contact_address != blank %} &middot; {{ section.settings.contact_address | escape }}{%- endif -%}
+      <div class="sm-footer__contact-list">
+        {%- if section.settings.contact_email != blank -%}
+          <a href="mailto:{{ section.settings.contact_email | escape }}" class="sm-footer__contact-item">
+            <svg class="sm-footer__contact-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+              <rect x="2.5" y="4.5" width="15" height="11" rx="1.5"/>
+              <path d="M3 5.5l7 5.5 7-5.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ section.settings.contact_email | escape }}</span>
+          </a>
+        {%- endif -%}
+        {%- if section.settings.contact_phone != blank -%}
+          <a href="tel:{{ section.settings.contact_phone | strip_html | escape }}" class="sm-footer__contact-item">
+            <svg class="sm-footer__contact-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+              <path d="M4.5 3h2.4l1.2 3.6-1.8 1.4a9 9 0 0 0 4.7 4.7l1.4-1.8 3.6 1.2v2.4c0 .8-.7 1.5-1.5 1.4-3-.2-5.8-1.5-8-3.7-2.2-2.2-3.5-5-3.7-8C3 3.7 3.7 3 4.5 3z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>{{ section.settings.contact_phone | escape }}</span>
+          </a>
+        {%- endif -%}
+        {%- if section.settings.contact_address != blank -%}
+          <span class="sm-footer__contact-item">
+            <svg class="sm-footer__contact-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+              <path d="M10 18s6-5.1 6-9.8A6 6 0 0 0 4 8.2C4 12.9 10 18 10 18z" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="10" cy="8.2" r="2.1"/>
+            </svg>
+            <span>{{ section.settings.contact_address | escape }}</span>
+          </span>
+        {%- endif -%}
+      </div>
     </div>
 
     <div class="sm-footer__bottom">{{ section.settings.copyright_text | escape }}</div>

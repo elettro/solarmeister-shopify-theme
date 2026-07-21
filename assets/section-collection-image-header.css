@@ -62,7 +62,8 @@
   flex-direction: column;
   gap: 0.5rem;
   align-items: flex-start;
-  max-width: 34rem;
+  box-sizing: border-box;
+  max-width: min(90vw, 44rem);
   padding: 1.2rem 1.6rem;
   border-radius: 0.6rem;
   background: rgba(6, 16, 10, 0.58);

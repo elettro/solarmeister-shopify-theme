@@ -1,11 +1,13 @@
 {
   "sections": {
     "banner": {
-      "type": "main-collection-banner",
+      "type": "collection-image-header",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "heading": "Balkonkraftwerke",
+        "subheading": "Eigenen Solarstrom erzeugen – auf Balkon, Terrasse oder Fassade.",
+        "height": "medium",
+        "color_scheme": "scheme-1",
+        "fallback_image_url": "https://cdn.shopify.com/s/files/1/1004/1858/4950/files/balkonkraftwerke-collection-header.png?v=1784661410"
       }
     },
     "product-grid": {

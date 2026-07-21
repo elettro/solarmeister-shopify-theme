@@ -31,12 +31,14 @@
   </div>
 
   <div class="collection-image-header__content page-width">
-    {%- if section.settings.heading != blank -%}
-      <h1 class="collection-image-header__heading">{{ section.settings.heading | escape }}</h1>
-    {%- endif -%}
-    {%- if section.settings.subheading != blank -%}
-      <p class="collection-image-header__subheading">{{ section.settings.subheading | escape }}</p>
-    {%- endif -%}
+    <div class="collection-image-header__text-panel">
+      {%- if section.settings.heading != blank -%}
+        <h1 class="collection-image-header__heading">{{ section.settings.heading | escape }}</h1>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="collection-image-header__subheading">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </div>
   </div>
 </div>
 

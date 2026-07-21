@@ -109,21 +109,42 @@
 .sm-footer__contact {
   margin-top: 2.4rem;
   font-size: 1.4rem;
-  line-height: 1.65;
 }
 
 .sm-footer__contact strong {
   display: block;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 
-.sm-footer__contact a {
+.sm-footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.sm-footer__contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
   color: #fff;
+  text-decoration: none;
 }
 
-.sm-footer__contact a:focus-visible {
+a.sm-footer__contact-item:hover {
+  text-decoration: underline;
+}
+
+.sm-footer__contact-item:focus-visible {
   outline: 2px solid var(--sm-lime);
   outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.sm-footer__contact-icon {
+  flex: 0 0 auto;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--sm-title-green);
 }
 
 .sm-footer__bottom {

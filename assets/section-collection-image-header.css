@@ -8,29 +8,17 @@
 .collection-image-header__media {
   position: relative;
   width: 100%;
-  height: 260px;
+  aspect-ratio: 4 / 1;
+  min-height: 200px;
+  max-height: 560px;
 }
 
 .collection-image-header--small .collection-image-header__media {
-  height: 220px;
+  max-height: 420px;
 }
 
 .collection-image-header--large .collection-image-header__media {
-  height: 420px;
-}
-
-@media screen and (min-width: 750px) {
-  .collection-image-header__media {
-    height: 340px;
-  }
-
-  .collection-image-header--small .collection-image-header__media {
-    height: 260px;
-  }
-
-  .collection-image-header--large .collection-image-header__media {
-    height: 460px;
-  }
+  max-height: 680px;
 }
 
 .collection-image-header__media img {

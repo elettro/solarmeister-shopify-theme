@@ -2,6 +2,10 @@
    Von/Bis price filter inputs. Dragging updates those inputs and dispatches an
    `input` event so Dawn's existing facets.js AJAX filtering picks it up. */
 
+.facets__price {
+  flex-wrap: wrap;
+}
+
 .solar-price-slider {
   display: block;
   flex: 1 1 100%;

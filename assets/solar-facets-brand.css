@@ -1,0 +1,9 @@
+/* SolarMeister brand colors for the collection filter sidebar (checkboxes, active-facet
+   pills, links). Scoped to the facets containers so it never touches surrounding text. */
+.facets-wrapper,
+.facets,
+.mobile-facets,
+.facet-filters {
+  --color-foreground: 18, 61, 38; /* SolarMeister dark green */
+  --color-link: 18, 61, 38;
+}

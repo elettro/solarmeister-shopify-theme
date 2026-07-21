@@ -1,0 +1,101 @@
+/* SolarMeister dual-handle price range slider, layered on top of Dawn's native
+   Von/Bis price filter inputs. Dragging updates those inputs and dispatches an
+   `input` event so Dawn's existing facets.js AJAX filtering picks it up. */
+
+.solar-price-slider {
+  display: block;
+  margin: 0.2rem 0 1.8rem;
+}
+
+.solar-price-slider__track-wrap {
+  position: relative;
+  height: 3.2rem;
+}
+
+.solar-price-slider__track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.4rem;
+  border-radius: 999px;
+  background: rgba(18, 61, 38, 0.15);
+}
+
+.solar-price-slider__range {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0.4rem;
+  border-radius: 999px;
+  background: #123d26;
+}
+
+.solar-price-slider input[type='range'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3.2rem;
+  margin: 0;
+  background: transparent;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.solar-price-slider input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 3.2rem;
+}
+
+.solar-price-slider input[type='range']::-moz-range-track {
+  background: transparent;
+  height: 3.2rem;
+  border: none;
+}
+
+.solar-price-slider input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: #123d26;
+  border: 0.3rem solid #dff4c8;
+  box-shadow: 0 0 0 0.1rem rgba(18, 61, 38, 0.35);
+  cursor: pointer;
+  margin-top: 0.65rem;
+}
+
+.solar-price-slider input[type='range']::-moz-range-thumb {
+  pointer-events: auto;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: #123d26;
+  border: 0.3rem solid #dff4c8;
+  box-shadow: 0 0 0 0.1rem rgba(18, 61, 38, 0.35);
+  cursor: pointer;
+}
+
+.solar-price-slider input[type='range']:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #123d26;
+  outline-offset: 2px;
+}
+
+.solar-price-slider input[type='range']:focus-visible::-moz-range-thumb {
+  outline: 2px solid #123d26;
+  outline-offset: 2px;
+}
+
+.solar-price-slider__values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #123d26;
+  margin-top: 0.4rem;
+}

@@ -65,11 +65,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  color: #fff;
 }
 
 .collection-image-header__subheading {
   margin: 0;
   font-size: 1.4rem;
+  color: #fff;
 }
 
 @media screen and (min-width: 990px) {

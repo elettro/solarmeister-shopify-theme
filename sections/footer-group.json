@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -7,7 +16,7 @@
       "settings": {
         "brand_text": "Solar Meister",
         "tagline": "Die Zukunft deiner Energie beginnt hier.",
-        "contact_email": "contact@solarmeister-shop.de",
+        "contact_email": "support@solarmeister-shop.de",
         "contact_phone": "+49 1525 9725120",
         "contact_address": "Gutenbergring 63, 22848 Norderstedt, Deutschland",
         "copyright_text": "© Solar Meister. Alle Rechte vorbehalten."
@@ -15,8 +24,6 @@
     },
     "footer": {
       "type": "footer",
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,

@@ -382,12 +382,93 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "178655860069ade8c7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_b728f9c_GwWbYa": {
+          "type": "ai_gen_block_b728f9c",
+          "settings": {
+            "heading": "Latest products",
+            "products_count": 12,
+            "show_vendor": false,
+            "show_price": true,
+            "show_new_badge": true,
+            "badge_text": "New",
+            "new_badge_days": 7,
+            "badge_background": "#334fb4",
+            "badge_text_color": "#ffffff",
+            "desktop_width_percent": 100,
+            "columns_desktop": 3,
+            "columns_tablet": 2,
+            "columns_mobile": "2",
+            "grid_gap": 16,
+            "heading_alignment": "center",
+            "heading_size": 32,
+            "heading_spacing": 32,
+            "heading_color": "#121212",
+            "card_border_radius": 0,
+            "card_padding": 16,
+            "card_background": "#ffffff",
+            "product_title_size": 16,
+            "product_title_color": "#121212",
+            "price_size": 16,
+            "price_color": "#121212",
+            "vendor_color": "#666666",
+            "section_padding": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_b728f9c_GwWbYa"
+      ],
+      "settings": {}
+    },
+    "178655877855ce12e5": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ae7772f_pPaynm": {
+          "type": "ai_gen_block_ae7772f",
+          "settings": {
+            "heading": "Discover our products",
+            "heading_alignment": "center",
+            "button_text": "See more",
+            "button_link": "",
+            "desktop_width_percent": 100,
+            "section_padding": 40,
+            "grid_gap": 20,
+            "heading_spacing": 30,
+            "button_spacing": 40,
+            "heading_size": 32,
+            "heading_color": "#121212",
+            "card_background": "#ffffff",
+            "card_border_radius": 8,
+            "product_title_size": 16,
+            "product_title_color": "#121212",
+            "product_price_size": 16,
+            "product_price_color": "#121212",
+            "button_font_size": 16,
+            "button_background": "#121212",
+            "button_hover_background": "#000000",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ae7772f_pPaynm"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "hero_slideshow",
     "featured_collection",
     "collection_gallery",
-    "featured_collection_marken"
+    "featured_collection_marken",
+    "178655860069ade8c7",
+    "178655877855ce12e5"
   ]
 }

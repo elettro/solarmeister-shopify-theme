@@ -7,6 +7,44 @@
   margin: 0 auto;
   padding: 4rem 2rem 6rem;
   color: rgb(var(--color-foreground));
+  position: relative;
+}
+
+.pf__lang-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.4rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.15);
+  border-radius: 999px;
+  padding: 0.3rem;
+}
+
+.pf__lang-btn {
+  border: none;
+  background: transparent;
+  color: rgba(var(--color-foreground), 0.6);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.pf__lang-btn.is-active {
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+@media screen and (max-width: 749px) {
+  .pf__lang-toggle {
+    position: static;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    width: fit-content;
+    margin-left: auto;
+  }
 }
 
 .pf__eyebrow {

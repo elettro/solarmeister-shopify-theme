@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-finder"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -30,7 +30,7 @@
                 class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
-                {%- if link.handle == 'balkonkraftwerke' -%}
+                {%- if link.handle == 'balkonkraftwerke' or link.handle == 'speicher' -%}
                   <div class="mega-menu__image-grid page-width">
                     <ul class="mega-menu__image-list" role="list">
                       {%- for childlink in link.links -%}

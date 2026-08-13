@@ -1,0 +1,185 @@
+{{ 'solar-product-finder.css' | asset_url | stylesheet_tag }}
+
+<div class="pf" id="ProductFinder-{{ section.id }}" data-product-finder>
+
+  <div class="pf__intro" data-pf-panel="intro">
+    <p class="pf__eyebrow">Kostenloser Konfigurator</p>
+    <h1 class="pf__title">Finde dein passendes Balkonkraftwerk</h1>
+    <p class="pf__lead">
+      Beantworte ein paar kurze Fragen zu deinem Standort und Bedarf – wir empfehlen dir
+      das passende SolarMeister-Set aus unserem Sortiment.
+    </p>
+    <button type="button" class="pf__button pf__button--primary" data-pf-start>Jetzt starten</button>
+  </div>
+
+  <div class="pf__quiz" data-pf-panel="quiz" hidden>
+    <div class="pf__progress-track" aria-hidden="true">
+      <div class="pf__progress-fill" data-pf-progress-fill></div>
+    </div>
+    <p class="pf__progress-label"><span data-pf-progress-label></span></p>
+
+    <button type="button" class="pf__back" data-pf-back hidden>← Zurück</button>
+
+    <fieldset class="pf__step" data-pf-step="mount">
+      <legend class="pf__question">Wo möchtest du dein Balkonkraftwerk montieren?</legend>
+      <div class="pf__card-grid" data-pf-options="mount">
+        {%- assign mount_options = "balkon:Balkon:balkonkraftwerke-balkon,flachdach:Flachdach oder Terrasse:balkonkraftwerke-flachdach,dach:Dach:balkonkraftwerke-dach,fassade:Hauswand oder Fassade:balkonkraftwerke-fassade,garten:Garten:balkonkraftwerke-garten,ohne:Ohne Halterung:balkonkraftwerke-ohne-halterung" | split: "," -%}
+        {%- for entry in mount_options -%}
+          {%- assign parts = entry | split: ":" -%}
+          {%- assign opt_value = parts[0] -%}
+          {%- assign opt_label = parts[1] -%}
+          {%- assign opt_collection = collections[parts[2]] -%}
+          <button type="button" class="pf__card" data-pf-choice data-value="{{ opt_value }}">
+            <span class="pf__card-image">
+              {%- if opt_collection.image -%}
+                {{ opt_collection.image | image_url: width: 300 | image_tag: loading: 'lazy', alt: opt_label }}
+              {%- endif -%}
+            </span>
+            <span class="pf__card-label">{{ opt_label }}</span>
+          </button>
+        {%- endfor -%}
+        <button type="button" class="pf__card pf__card--text" data-pf-choice data-value="unsicher">
+          <span class="pf__card-label">Noch unsicher oder mehr als ein Ort</span>
+        </button>
+      </div>
+    </fieldset>
+
+    <fieldset class="pf__step" data-pf-step="weight" hidden>
+      <legend class="pf__question">Ist deine Montagefläche gewichtssensibel, gebogen oder gewölbt?</legend>
+      <p class="pf__hint">Zum Beispiel aufgrund einer gerundeten Balkonbrüstung.</p>
+      <div class="pf__radio-list" data-pf-options="weight">
+        <label class="pf__radio"><input type="radio" name="pf-weight" value="ja" data-pf-choice><span>Ja</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-weight" value="nein" data-pf-choice><span>Nein</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="pf__step" data-pf-step="space" hidden>
+      <legend class="pf__question">Wie viel Platz steht dir für die Solarmodule zur Verfügung?</legend>
+      <p class="pf__hint">Richtwert je nach Montageart und Modulgröße.</p>
+      <div class="pf__card-grid" data-pf-options="space">
+        <button type="button" class="pf__card" data-pf-choice data-value="1">
+          <span class="pf__modules-diagram"><span class="pf__module-block"></span></span>
+          <span class="pf__card-label">ca. 1,2 × 2 m<br><small>Platz für 1 Solarmodul</small></span>
+        </button>
+        <button type="button" class="pf__card" data-pf-choice data-value="2">
+          <span class="pf__modules-diagram"><span class="pf__module-block"></span><span class="pf__module-block"></span></span>
+          <span class="pf__card-label">ca. 2,4 × 2 m<br><small>Platz für 2 Solarmodule</small></span>
+        </button>
+        <button type="button" class="pf__card" data-pf-choice data-value="3-4">
+          <span class="pf__modules-diagram">
+            <span class="pf__module-block"></span><span class="pf__module-block"></span><span class="pf__module-block"></span><span class="pf__module-block"></span>
+          </span>
+          <span class="pf__card-label">ca. 4,8 × 2 m<br><small>Platz für 3–4 Solarmodule</small></span>
+        </button>
+        <button type="button" class="pf__card" data-pf-choice data-value="6-8">
+          <span class="pf__modules-diagram pf__modules-diagram--wrap">
+            <span class="pf__module-block"></span><span class="pf__module-block"></span><span class="pf__module-block"></span><span class="pf__module-block"></span>
+            <span class="pf__module-block"></span><span class="pf__module-block"></span><span class="pf__module-block"></span><span class="pf__module-block"></span>
+          </span>
+          <span class="pf__card-label">Mehr als 4,8 × 2 m<br><small>Platz für 6–8 Solarmodule</small></span>
+        </button>
+        <button type="button" class="pf__card pf__card--text" data-pf-choice data-value="unsicher">
+          <span class="pf__card-label">Ich weiß es nicht</span>
+        </button>
+      </div>
+    </fieldset>
+
+    <fieldset class="pf__step" data-pf-step="consumption" hidden>
+      <legend class="pf__question">Wie hoch ist dein jährlicher Stromverbrauch?</legend>
+      <p class="pf__hint">Eine ungefähre Einschätzung genügt.</p>
+      <div class="pf__radio-list" data-pf-options="consumption">
+        <label class="pf__radio"><input type="radio" name="pf-consumption" value="unter-1000" data-pf-choice><span>Unter 1.000 kWh</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-consumption" value="1000-2000" data-pf-choice><span>1.000 – 2.000 kWh</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-consumption" value="2000-3000" data-pf-choice><span>2.000 – 3.000 kWh</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-consumption" value="ueber-3000" data-pf-choice><span>Über 3.000 kWh</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-consumption" value="unsicher" data-pf-choice><span>Ich weiß es nicht</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="pf__step" data-pf-step="orientation" hidden>
+      <legend class="pf__question">Wie ist die Ausrichtung des Standorts?</legend>
+      <div class="pf__radio-list" data-pf-options="orientation">
+        <label class="pf__radio"><input type="radio" name="pf-orientation" value="sueden" data-pf-choice><span>Süden</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-orientation" value="ost-west" data-pf-choice><span>Osten oder Westen</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-orientation" value="norden" data-pf-choice><span>Norden</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-orientation" value="unsicher" data-pf-choice><span>Ich weiß es nicht</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="pf__step" data-pf-step="rent" hidden>
+      <legend class="pf__question">Wohnst du zur Miete?</legend>
+      <p class="pf__hint">Auch als Mieter ist ein Balkonkraftwerk grundsätzlich möglich.</p>
+      <div class="pf__radio-list" data-pf-options="rent">
+        <label class="pf__radio"><input type="radio" name="pf-rent" value="ja" data-pf-choice><span>Ja</span></label>
+        <label class="pf__radio"><input type="radio" name="pf-rent" value="nein" data-pf-choice><span>Nein</span></label>
+      </div>
+    </fieldset>
+
+    <button type="button" class="pf__button pf__button--primary" data-pf-next hidden disabled>Weiter</button>
+  </div>
+
+  <div class="pf__loading" data-pf-panel="loading" hidden>
+    <p class="pf__title">Wir stellen dein Ergebnis zusammen …</p>
+  </div>
+
+  <div class="pf__results" data-pf-panel="results" hidden>
+    <p class="pf__eyebrow">0% MwSt. auf Photovoltaik gem. § 12 Abs. 3 UStG</p>
+    <h2 class="pf__title">Unsere Empfehlung für dich</h2>
+    <p class="pf__lead">Dieses Set passt am besten zu deinem Standort, deiner Ausrichtung und deinem Platzangebot.</p>
+
+    <div class="pf__result-card" data-pf-result-card></div>
+    <div class="pf__addon" data-pf-addon hidden></div>
+
+    <button type="button" class="pf__button pf__button--ghost" data-pf-restart>↻ Von vorne beginnen</button>
+  </div>
+
+  <script type="application/json" data-pf-catalog>
+    [
+      {%- paginate collections['balkonkraftwerke'].products by 250 -%}
+        {%- for product in collections['balkonkraftwerke'].products -%}
+          {
+            "title": {{ product.title | json }},
+            "url": {{ product.url | json }},
+            "image": {% if product.featured_image %}{{ product.featured_image | image_url: width: 600 | json }}{% else %}null{% endif %},
+            "price": {{ product.price | json }},
+            "tags": {{ product.tags | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      {%- endpaginate -%}
+    ]
+  </script>
+
+  <script type="application/json" data-pf-addons>
+    [
+      {%- assign addon_handles = "balkon:halterung-balkon,flachdach:halterung-flachdach,fassade:halterung-fassade,garten:halterung-garten" | split: "," -%}
+      {%- for entry in addon_handles -%}
+        {%- assign parts = entry | split: ":" -%}
+        {%- assign mount_key = parts[0] -%}
+        {%- assign addon_product = all_products[parts[1]] -%}
+        {%- if addon_product and addon_product.id != blank -%}
+          {
+            "mount": {{ mount_key | json }},
+            "title": {{ addon_product.title | json }},
+            "url": {{ addon_product.url | json }},
+            "image": {% if addon_product.featured_image %}{{ addon_product.featured_image | image_url: width: 300 | json }}{% else %}null{% endif %},
+            "price": {{ addon_product.price | json }}
+          }{% unless forloop.last %},{% endunless %}
+        {%- endif -%}
+      {%- endfor -%}
+    ]
+  </script>
+</div>
+
+<script src="{{ 'solar-product-finder.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Produktfinder",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Produktfinder"
+    }
+  ]
+}
+{% endschema %}

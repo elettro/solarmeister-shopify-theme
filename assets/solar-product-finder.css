@@ -1,0 +1,295 @@
+.pf [hidden] {
+  display: none !important;
+}
+
+.pf {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  color: rgb(var(--color-foreground));
+}
+
+.pf__eyebrow {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.65);
+  margin: 0 0 1rem;
+}
+
+.pf__title {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+}
+
+.pf__lead {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: rgba(var(--color-foreground), 0.75);
+  margin: 0 0 3rem;
+  max-width: 56rem;
+}
+
+.pf__hint {
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.65);
+  margin: -1.5rem 0 2rem;
+}
+
+.pf__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--buttons-radius, 4px);
+  padding: 1.4rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 5rem;
+}
+
+.pf__button--primary {
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+.pf__button--primary:hover {
+  opacity: 0.9;
+}
+
+.pf__button--ghost {
+  background: transparent;
+  color: rgb(var(--color-foreground));
+  border: 0.1rem solid rgba(var(--color-foreground), 0.3);
+  margin-top: 3rem;
+}
+
+.pf__back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.75);
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.pf__progress-track {
+  height: 0.6rem;
+  border-radius: 999px;
+  background: rgba(var(--color-foreground), 0.1);
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.pf__progress-fill {
+  height: 100%;
+  width: 0%;
+  background: rgb(var(--color-button));
+  transition: width 0.25s ease;
+}
+
+.pf__progress-label {
+  font-size: 1.2rem;
+  color: rgba(var(--color-foreground), 0.6);
+  margin: 0 0 2.4rem;
+}
+
+.pf__question {
+  font-size: 2.4rem;
+  line-height: 1.3;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.pf__step {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pf__card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.6rem;
+}
+
+.pf__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.15);
+  border-radius: 8px;
+  background: rgb(var(--color-background));
+  padding: 1.8rem 1.4rem;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.pf__card:hover,
+.pf__card:focus-visible {
+  border-color: rgb(var(--color-button));
+}
+
+.pf__card.is-selected {
+  border-color: rgb(var(--color-button));
+  box-shadow: 0 0 0 0.1rem rgb(var(--color-button));
+}
+
+.pf__card--text {
+  justify-content: center;
+  min-height: 8rem;
+}
+
+.pf__card-image {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(var(--color-foreground), 0.05);
+}
+
+.pf__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pf__card-label {
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.pf__card-label small {
+  color: rgba(var(--color-foreground), 0.6);
+  font-size: 1.2rem;
+}
+
+.pf__modules-diagram {
+  display: flex;
+  gap: 0.3rem;
+  height: 6rem;
+  align-items: flex-end;
+}
+
+.pf__modules-diagram--wrap {
+  flex-wrap: wrap;
+  height: auto;
+  width: 10rem;
+  justify-content: center;
+}
+
+.pf__module-block {
+  width: 1.8rem;
+  height: 3.4rem;
+  background: rgba(var(--color-foreground), 0.75);
+  border-radius: 2px;
+}
+
+.pf__radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.pf__radio {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.15);
+  border-radius: 8px;
+  padding: 1.6rem 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.pf__radio:has(input:checked) {
+  border-color: rgb(var(--color-button));
+}
+
+.pf__radio input {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.pf__loading {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.pf__result-card {
+  border: 0.1rem solid rgba(var(--color-foreground), 0.15);
+  border-radius: 8px;
+  padding: 2.4rem;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  gap: 2.4rem;
+  align-items: start;
+}
+
+.pf__result-card img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.pf__result-title {
+  font-size: 2rem;
+  margin: 0 0 0.8rem;
+}
+
+.pf__result-price {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 1.6rem;
+}
+
+.pf__result-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.pf__addon {
+  margin-top: 2rem;
+  border: 0.1rem dashed rgba(var(--color-foreground), 0.3);
+  border-radius: 8px;
+  padding: 1.6rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 1.4rem;
+}
+
+.pf__addon img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 749px) {
+  .pf {
+    padding: 3rem 1.6rem 4rem;
+  }
+
+  .pf__title {
+    font-size: 2.4rem;
+  }
+
+  .pf__result-card {
+    grid-template-columns: 1fr;
+  }
+}

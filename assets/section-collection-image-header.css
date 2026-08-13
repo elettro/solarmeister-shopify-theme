@@ -59,17 +59,19 @@
   -webkit-backdrop-filter: blur(4px);
 }
 
-.collection-image-header__heading {
+.collection-image-header .collection-image-header__heading {
   margin: 0;
   font-size: 2.2rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  color: #fff;
 }
 
-.collection-image-header__subheading {
+.collection-image-header .collection-image-header__subheading {
   margin: 0;
   font-size: 1.4rem;
+  color: #fff;
 }
 
 @media screen and (min-width: 990px) {

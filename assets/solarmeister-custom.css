@@ -14,12 +14,17 @@
 
 /* Nudge the logo up so its wordmark optically lines up with the nav text baseline */
 .header--middle-left .header__heading-logo-wrapper {
-  transform: translateY(-6px);
+  transform: translateY(-9px);
 }
 
 /* Hide the built-in Availability filter on collection pages (desktop + mobile) */
 [id*="filter.v.availability"] {
   display: none !important;
+}
+
+/* Bold homepage section titles */
+.template-index h2 {
+  font-weight: 700;
 }
 
 /* Uppercase top-level navigation: mobile drawer (submenus stay unchanged) */

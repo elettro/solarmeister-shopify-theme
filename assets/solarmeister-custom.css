@@ -6,6 +6,17 @@
   text-transform: uppercase;
 }
 
+/* Bold top-level navigation: desktop inline menu */
+.header__inline-menu .list-menu--inline > li > a.header__menu-item,
+.header__inline-menu .list-menu--inline > li > header-menu > details > summary.header__menu-item {
+  font-weight: 700;
+}
+
+/* Nudge the logo up so its wordmark optically lines up with the nav text baseline */
+.header--middle-left .header__heading-logo-wrapper {
+  transform: translateY(-6px);
+}
+
 /* Uppercase top-level navigation: mobile drawer (submenus stay unchanged) */
 .menu-drawer__menu.list-menu > li > a.menu-drawer__menu-item,
 .menu-drawer__menu.list-menu > li > details > summary.menu-drawer__menu-item {

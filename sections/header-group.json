@@ -5,7 +5,7 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-6",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -19,7 +19,7 @@
           "settings": {
             "text": "0 % MwSt. auf Photovoltaik gem. § 12 Abs. 3 UStG – Sie sparen 19 %",
             "text_alignment": "center",
-            "color_scheme": "scheme-1",
+            "color_scheme": "scheme-6",
             "link": "shopify://collections/komplettsets"
           }
         }

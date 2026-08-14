@@ -17,6 +17,11 @@
   transform: translateY(-6px);
 }
 
+/* Hide the built-in Availability filter on collection pages (desktop + mobile) */
+[id*="filter.v.availability"] {
+  display: none !important;
+}
+
 /* Uppercase top-level navigation: mobile drawer (submenus stay unchanged) */
 .menu-drawer__menu.list-menu > li > a.menu-drawer__menu-item,
 .menu-drawer__menu.list-menu > li > details > summary.menu-drawer__menu-item {

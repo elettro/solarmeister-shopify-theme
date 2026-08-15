@@ -25,7 +25,7 @@
 
   .ai-latest-products-grid-{{ ai_gen_id }} {
     display: grid;
-    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: {{ block.settings.grid_gap }}px;
   }
 
@@ -38,11 +38,13 @@
     border-radius: {{ block.settings.card_border_radius }}px;
     overflow: hidden;
     background-color: {{ block.settings.card_background }};
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .ai-latest-products-card-{{ ai_gen_id }}:hover {
     transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   }
 
   .ai-latest-products-image-wrapper-{{ ai_gen_id }} {
@@ -121,15 +123,10 @@
     font-size: 16px;
   }
 
-  @media screen and (max-width: 989px) {
-    .ai-latest-products-grid-{{ ai_gen_id }} {
-      grid-template-columns: repeat({{ block.settings.columns_tablet }}, 1fr);
-    }
-  }
-
   @media screen and (max-width: 749px) {
     .ai-latest-products-grid-{{ ai_gen_id }} {
-      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      gap: calc({{ block.settings.grid_gap }}px * 0.7);
     }
 
     .ai-latest-products-title-{{ ai_gen_id }} {
@@ -151,7 +148,7 @@
 
   {% assign all_products = collections.all.products %}
   {% assign products_to_show = block.settings.products_count %}
-  
+
   {% if all_products.size > 0 %}
     <div class="ai-latest-products-grid-{{ ai_gen_id }}">
       {% for product in all_products limit: products_to_show %}
@@ -169,7 +166,7 @@
             {% else %}
               {{ 'product-1' | placeholder_svg_tag }}
             {% endif %}
-            
+
             {% if block.settings.show_new_badge %}
               {% assign days_since_created = 'now' | date: '%s' | minus: product.created_at | date: '%s' | divided_by: 86400 %}
               {% if days_since_created <= block.settings.new_badge_days %}
@@ -177,14 +174,14 @@
               {% endif %}
             {% endif %}
           </div>
-          
+
           <div class="ai-latest-products-info-{{ ai_gen_id }}">
             {% if block.settings.show_vendor and product.vendor != blank %}
               <div class="ai-latest-products-vendor-{{ ai_gen_id }}">{{ product.vendor }}</div>
             {% endif %}
-            
+
             <h3 class="ai-latest-products-product-title-{{ ai_gen_id }}">{{ product.title }}</h3>
-            
+
             {% if block.settings.show_price %}
               <div class="ai-latest-products-price-{{ ai_gen_id }}">
                 {{ product.price | money }}
@@ -313,40 +310,6 @@
     },
     {
       "type": "range",
-      "id": "columns_desktop",
-      "min": 2,
-      "max": 6,
-      "step": 1,
-      "label": "Columns on desktop",
-      "default": 3
-    },
-    {
-      "type": "range",
-      "id": "columns_tablet",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "label": "Columns on tablet",
-      "default": 2
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "label": "Columns on mobile",
-      "options": [
-        {
-          "value": "1",
-          "label": "1"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        }
-      ],
-      "default": "2"
-    },
-    {
-      "type": "range",
       "id": "grid_gap",
       "min": 8,
       "max": 40,
@@ -417,7 +380,7 @@
       "step": 2,
       "unit": "px",
       "label": "Border radius",
-      "default": 0
+      "default": 8
     },
     {
       "type": "range",

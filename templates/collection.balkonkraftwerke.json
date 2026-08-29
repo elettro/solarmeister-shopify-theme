@@ -1,5 +1,76 @@
 {
   "sections": {
+    "category-grid": {
+      "type": "collection-category-grid",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Finde dein passendes Balkonkraftwerk",
+        "text": "Nutze unseren Produktfinder oder wähle direkt deinen Montageort.",
+        "finder_url": "/pages/product-finder",
+        "button_label": "Zum Produktfinder",
+        "finder_tile_label": "Produktfinder"
+      },
+      "blocks": {
+        "mit-speicher": {
+          "type": "category",
+          "settings": {
+            "collection": "balkonkraftwerke-mit-speicher",
+            "label": "Mit Speicher"
+          }
+        },
+        "balkon": {
+          "type": "category",
+          "settings": {
+            "collection": "balkonkraftwerke-balkon",
+            "label": "Balkon"
+          }
+        },
+        "dach": {
+          "type": "category",
+          "settings": {
+            "collection": "balkonkraftwerke-dach",
+            "label": "Dach"
+          }
+        },
+        "flachdach": {
+          "type": "category",
+          "settings": {
+            "collection": "balkonkraftwerke-flachdach",
+            "label": "Flachdach"
+          }
+        },
+        "fassade": {
+          "type": "category",
+          "settings": {
+            "collection": "balkonkraftwerke-fassade",
+            "label": "Fassade"
+          }
+        },
+        "garten": {
+          "type": "category",
+          "settings": {
+            "collection": "balkonkraftwerke-garten",
+            "label": "Garten"
+          }
+        },
+        "ohne-halterung": {
+          "type": "category",
+          "settings": {
+            "collection": "balkonkraftwerke-ohne-halterung",
+            "label": "Ohne Halterung"
+          }
+        }
+      },
+      "block_order": [
+        "mit-speicher",
+        "balkon",
+        "dach",
+        "flachdach",
+        "fassade",
+        "garten",
+        "ohne-halterung"
+      ]
+    },
     "banner": {
       "type": "collection-image-header",
       "settings": {
@@ -32,6 +103,7 @@
     }
   },
   "order": [
+    "category-grid",
     "banner",
     "product-grid"
   ]

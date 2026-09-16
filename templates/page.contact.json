@@ -16,10 +16,20 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "map": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"sm-map-section\">\n\n  <div class=\"sm-map-heading\">\n    <h2>Anfahrt</h2>\n\n    <p>\n      Neckermann Strom GmbH<br>\n      Gutenbergring 63<br>\n      22848 Norderstedt\n    </p>\n  </div>\n\n  <div id=\"sm-map-container\" class=\"sm-map-placeholder\">\n\n    <div id=\"sm-map-consent\" class=\"sm-map-consent\">\n\n      <h3>Google Maps</h3>\n\n      <p>\n        Google Maps ist aus Datenschutzgründen deaktiviert.\n      </p>\n\n      <p class=\"sm-map-small\">\n        Mit dem Laden der Karte stimmen Sie zu, dass Daten an Google übertragen werden.\n      </p>\n\n      <button\n        type=\"button\"\n        id=\"sm-load-map\"\n        class=\"sm-map-button\">\n        Google Maps laden\n      </button>\n\n    </div>\n\n  </div>\n\n</div>\n\n<style>\n\n.sm-map-section {\n  max-width: 1200px;\n  margin: 50px auto;\n  padding: 0 20px;\n}\n\n.sm-map-heading {\n  margin-bottom: 24px;\n}\n\n.sm-map-heading h2 {\n  margin-bottom: 12px;\n}\n\n.sm-map-placeholder {\n  width: 100%;\n  min-height: 450px;\n  background: #f2f2f2;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.sm-map-consent {\n  max-width: 600px;\n  padding: 50px 30px;\n  text-align: center;\n}\n\n.sm-map-consent h3 {\n  margin-bottom: 12px;\n}\n\n.sm-map-consent p {\n  margin-bottom: 12px;\n}\n\n.sm-map-small {\n  font-size: 14px;\n  opacity: .75;\n}\n\n.sm-map-button {\n  margin-top: 14px;\n  padding: 14px 24px;\n  background: #74b82a;\n  color: #fff;\n  border: 0;\n  border-radius: 5px;\n  font-weight: 700;\n  cursor: pointer;\n}\n\n.sm-map-button:hover {\n  opacity: .9;\n}\n\n.sm-google-map {\n  width: 100%;\n  height: 450px;\n  border: 0;\n  display: block;\n}\n\n@media (max-width: 749px) {\n\n  .sm-map-section {\n    margin: 35px auto;\n    padding: 0 16px;\n  }\n\n  .sm-map-placeholder,\n  .sm-google-map {\n    min-height: 350px;\n    height: 350px;\n  }\n\n}\n\n</style>\n\n<script>\n\ndocument.addEventListener('DOMContentLoaded', function () {\n\n  const button = document.getElementById('sm-load-map');\n  const container = document.getElementById('sm-map-container');\n\n  if (!button || !container) return;\n\n  button.addEventListener('click', function () {\n\n    const iframe = document.createElement('iframe');\n\n    iframe.src = 'https://www.google.com/maps?q=Neckermann+Strom+GmbH,+Gutenbergring+63,+22848+Norderstedt&output=embed';\n\n    iframe.className = 'sm-google-map';\n\n    iframe.loading = 'lazy';\n\n    iframe.allowFullscreen = true;\n\n    iframe.referrerPolicy = 'strict-origin-when-cross-origin';\n\n    iframe.setAttribute(\n      'title',\n      'Google Maps Standort Neckermann Strom GmbH'\n    );\n\n    container.innerHTML = '';\n\n    container.appendChild(iframe);\n\n  });\n\n});\n\n</script>",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "form"
+    "form",
+    "map"
   ]
 }
